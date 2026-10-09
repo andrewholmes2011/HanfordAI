@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Study Desk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Sign in -->
+<main id="login-view" class="login">
+  <section class="login-card">
+    <h1>Study Desk</h1>
+    <p class="lede">Ask questions, work through problems, and get unstuck. Your teacher can see your chats.</p>
+    <form id="login-form" autocomplete="off">
+      <label for="username">Username</label>
+      <input id="username" name="username" type="text" required autocapitalize="off" spellcheck="false">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" required>
+      <p id="login-error" class="error" role="alert" hidden></p>
+      <button type="submit" class="btn primary">Sign in</button>
+    </form>
+  </section>
+</main>
+
+<!-- Chat -->
+<div id="app-view" class="app" hidden>
+  <header class="topbar">
+    <strong class="brand">Study Desk</strong>
+    <span id="who" class="who"></span>
+    <nav class="nav">
+      <button id="tab-chat" class="tab active" type="button">Chat</button>
+      <button id="tab-teacher" class="tab" type="button" hidden>Student history</button>
+      <button id="logout" class="tab" type="button">Sign out</button>
+    </nav>
+  </header>
+
+  <section id="chat-panel" class="panel">
+    <div id="messages" class="messages" aria-live="polite"></div>
+    <form id="chat-form" class="composer">
+      <textarea id="chat-input" rows="1" placeholder="Ask a question…" required></textarea>
+      <button type="submit" class="btn primary" id="send">Send</button>
+    </form>
+    <p id="teacher-hint" class="hint" hidden>Teacher tip: type <code>?check Joey_Smith</code> to open a student's chats.</p>
+  </section>
+
+  <section id="teacher-panel" class="panel teacher" hidden>
+    <aside class="roster">
+      <h2>Students</h2>
+      <ul id="student-list"></ul>
+    </aside>
+    <div class="viewer">
+      <h2 id="viewer-title">Pick a student</h2>
+      <div id="viewer-messages" class="messages"></div>
+    </div>
+  </section>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

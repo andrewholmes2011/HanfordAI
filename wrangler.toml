@@ -1,0 +1,13 @@
+name = "chatgpt4students"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+[ai]
+binding = "AI"
+
+[[kv_namespaces]]
+binding = "CHATS"
+id = "PASTE_YOUR_KV_NAMESPACE_ID_HERE"
+
+[vars]
+ALLOWED_ORIGIN = "https://andrewholmes2011.github.io"
